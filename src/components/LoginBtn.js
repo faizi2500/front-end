@@ -2,11 +2,11 @@ import logo from '../assets/twitter_logo.png';
 
 const LoginBtn = () => (
   <>
-    <button type="button" className="w-50 btn-hover btn btn-light rounded-pill border-white px-3 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" className="w-50 btn-hover btn btn-light rounded-pill border-white px-3 py-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Login to your Account
     </button>
 
-    <div className="modal fade modal-bg" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal fade modal-bg" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content modal-box-bg">
           <div className="mt-2 ms-2 w-50 d-flex justify-content-between">
@@ -31,7 +31,7 @@ const LoginBtn = () => (
                 Do not have an account?
               </p>
               <div className="">
-                <button type="button" className="w-100 signup-hover btn btn-primary rounded-pill border-primary px-3 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                <button type="button" className="w-100 signup-hover btn btn-primary rounded-pill border-primary px-3 py-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
                   Sign up with Email
                 </button>
               </div>
