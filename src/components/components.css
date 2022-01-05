@@ -44,3 +44,34 @@
   opacity: 0;
   color: white;
 }
+
+.input-control {
+  background-color: black;
+  border: gray 1px solid;
+}
+
+.input-control:active,
+.input-control:focus,
+.input-control:focus:active {
+  background-color: black;
+  border: #00acee 1px solid;
+  color: white;
+  height: 50px;
+  font-size: 1.05em;
+}
+
+.forgot-pswd {
+  background-color: black;
+}
+
+.forgot-pswd:hover {
+  background-color: rgb(34, 32, 32);
+} 
+
+.signup-controls {
+  height: 55px;
+}
+
+.date-picker {
+  width: 40%;
+}
