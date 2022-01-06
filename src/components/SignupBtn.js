@@ -1,52 +1,54 @@
 import { useState } from 'react';
-import axios from 'axios';
 import logo from '../assets/twitter_logo.png';
 // eslint: disable max-len
 const SignupBtn = () => {
   const [obj, setObj] = useState({
-    dob: '',
     name: '',
     email: '',
     password: '',
+    dob: '',
   });
-  // let dob;
-  // let name;
-  // let email;
-  // let password;
-  // const obj = {
-  //   dob,
-  //   name,
-  //   email,
-  //   password,
-  // };
 
   const updateOnChange = (event) => {
     setObj({
       ...obj,
       [event.target.name]: event.target.value,
     });
-    console.log(obj);
-    // console.log('name: ' obj.name)
   };
 
   const updateOnSubmit = async () => {
-    const data = JSON.stringify(obj);
-    console.log(data);
-    const config = {
-      method: 'post',
-      url: 'http://localhost:5000/user/sign_up',
+    // fetch('http://localhost:5000/user/sign_up', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ obj }),
+    // })
+    //   .then((res) => res.json())
+    //   .catch((error) => console.log('error', error));
+    // const myHeaders = new Headers();
+    // myHeaders.append('Content-Type', 'application/json');
+
+    // const data = JSON.stringify(obj);
+    // console.log(data);
+    console.log(obj.dob);
+    console.log(obj.name);
+    console.log(obj.email);
+    console.log(obj.password);
+    const requestOptions = {
+      mode: 'no-cors',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      data,
+      body: JSON.stringify(obj),
+      redirect: 'follow',
     };
-    await axios(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+
+    const result = await fetch('http://localhost:5000/user/sign_up', requestOptions)
+      .then((response) => response)
+      .catch((error) => console.log('error', error));
+    console.log(result);
   };
 
   return (
