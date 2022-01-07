@@ -19,6 +19,12 @@
   height: 35px;
 }
 
+
+.logo-img-home {
+  transform: rotate(5deg);
+  width: 25px;
+  height: 25px;
+}
 .heading-login {
   color: white;
   font-size: 4.8em;
@@ -40,7 +46,7 @@
   background-color: rgb(36,45,52);
 }
 
-.modal-box-bg {
+.modal-box-bg, .black-bg-home {
   background-color: black;
 }
 
@@ -78,4 +84,88 @@
 
 .date-picker {
   width: 40%;
+}
+
+.nav-width {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.first-section {
+  width: 25%;
+}
+
+.home-logo-img {
+  transform: rotate(5deg);
+  width: 30px;
+  height: 30px; 
+}
+
+.second-section {
+  width: 50%;
+}
+
+.hr-line {
+  width: 2em;
+  color: orange;
+  transform: rotate(90deg);
+}
+
+.first-section-position {
+  position: fixed;
+}
+
+.nav-fix {
+  position: fixed;
+  top: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.color-icon { 
+  color:white;
+}
+
+.menu-icons {
+  cursor: pointer;
+}
+
+.menu-icons:hover * {
+  color: #00acee;
+}
+
+.fixed-positon {
+  position: relative;
+}
+
+.rounded-img-bg {
+  height: min-content;
+  cursor: pointer;
+}
+
+.rounded-img-bg:hover {
+  padding-inline: 8px;
+  height: min-content;
+  background-color: rgb(32,35,39);
+  border-radius: 32px;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: rgb(32,35,39);
+  
+}
+
+.search-input:focus {
+  outline: none;
+  color: white;
+}
+
+.increase-width {
+  width: 130%;
+  height: 2em;
 }

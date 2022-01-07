@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/twitter_logo.png';
 // eslint: disable max-len
 const SignupBtn = () => {
@@ -8,6 +9,22 @@ const SignupBtn = () => {
     password: '',
     dob: '',
   });
+  const navigate = useNavigate();
+
+  // const [signupStatus, setSignupStatus] = useState(false);
+  let signupStatus = false;
+  console.log(signupStatus);
+
+  // if (signupStatus) {
+  //   return (
+  //     navigate('./home', { state: obj })
+  //   );
+  // }
+
+  const userSignedUp = (obj) => {
+    const { name, email } = obj;
+    navigate('./home', { state: { name, email } });
+  };
 
   const updateOnChange = (event) => {
     setObj({
@@ -17,24 +34,6 @@ const SignupBtn = () => {
   };
 
   const updateOnSubmit = async () => {
-    // fetch('http://localhost:5000/user/sign_up', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ obj }),
-    // })
-    //   .then((res) => res.json())
-    //   .catch((error) => console.log('error', error));
-    // const myHeaders = new Headers();
-    // myHeaders.append('Content-Type', 'application/json');
-
-    // const data = JSON.stringify(obj);
-    // console.log(data);
-    console.log(obj.dob);
-    console.log(obj.name);
-    console.log(obj.email);
-    console.log(obj.password);
     const requestOptions = {
       mode: 'no-cors',
       method: 'POST',
@@ -48,7 +47,10 @@ const SignupBtn = () => {
     const result = await fetch('http://localhost:5000/user/sign_up', requestOptions)
       .then((response) => response)
       .catch((error) => console.log('error', error));
-    console.log(result);
+    if (result) {
+      signupStatus = true;
+      userSignedUp(obj);
+    }
   };
 
   return (
