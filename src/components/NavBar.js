@@ -10,7 +10,7 @@ const NavBar = () => (
         2 of 3 (wider)
       </div>
       <div className="col border-start">
-        <div className='border border-ligh bg-secondary rounded-circle'>
+        <div className="border border-ligh bg-secondary rounded-circle">
           <input className="form-control mt-3" type="text" placeholder="Search" />
         </div>
       </div>
